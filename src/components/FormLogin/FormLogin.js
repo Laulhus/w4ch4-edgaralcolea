@@ -2,7 +2,7 @@ import { useContext } from "react";
 import FormContext from "../../contexts/FormContext/FormContext";
 
 const FormLogin = () => {
-  const { formLoginData } = useContext(FormContext);
+  const { setFormState } = useContext(FormContext);
   return (
     <form className="d-flex flex-column col-4 justify-content-center">
       <label>
@@ -18,7 +18,7 @@ const FormLogin = () => {
         <input type="checkbox" name="name" />
       </label>
 
-      <input type="submit" value="Next" />
+      <input type="submit" value="Previous" onClick={() => setFormState(2)} />
     </form>
   );
 };
