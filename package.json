@@ -18,6 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "compile": "sass compile styles/styles.scss  styles/css/styles.css",
     "prepare": "husky install"
   },
   "eslintConfig": {
