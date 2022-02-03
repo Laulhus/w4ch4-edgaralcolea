@@ -2,7 +2,7 @@ import { useContext } from "react";
 import FormContext from "../../contexts/FormContext/FormContext";
 
 const FormAccess = () => {
-  const { formAccessData } = useContext(FormContext);
+  const { setFormState } = useContext(FormContext);
   return (
     <form className="d-flex flex-column col-4 justify-content-center">
       <label>
@@ -11,14 +11,14 @@ const FormAccess = () => {
       </label>
       <label>
         Password:
-        <input type="text" name="name" />
+        <input type="text" password="password" />
       </label>
       <label>
         Repeat Password:
-        <input type="text" name="name" />
+        <input type="text" password="password" />
       </label>
-
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Previous" onClick={() => setFormState(1)} />
+      <input type="submit" value="Next" onClick={() => setFormState(3)} />
     </form>
   );
 };

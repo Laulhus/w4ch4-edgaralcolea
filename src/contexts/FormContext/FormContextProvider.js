@@ -2,32 +2,28 @@ import { useState } from "react";
 import FormContext from "./FormContext";
 
 const FormContextProvider = ({ children }) => {
-  const [formPersonalData, setFormPersonalData] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     lastName: "",
     birthdate: "",
     email: "",
-  });
-  const [formAccessData, setFormAccessData] = useState({
     username: "",
     password: "",
   });
-  const [formLoginData, setFormLoginData] = useState({
-    username: "",
-    password: "",
-  });
+
   const [formState, setFormState] = useState(1);
+  const setName = (string) => {
+    setFormData({ ...formData, name: string });
+  };
+
   return (
     <FormContext.Provider
       value={{
-        formPersonalData,
-        setFormPersonalData,
-        formAccessData,
-        setFormAccessData,
+        formData,
+        setFormData,
         formState,
         setFormState,
-        formLoginData,
-        setFormLoginData,
+        setName,
       }}
     >
       {children}
